@@ -8,7 +8,9 @@ permalink: /
 {%- assign calendar_contact = hub.contacts | where: 'icon', 'calendar' | first -%}
 {%- assign email_contact = hub.contacts | where: 'icon', 'mail' | first -%}
 {%- assign phone_contact = hub.contacts | where: 'icon', 'phone' | first -%}
-{%- assign active_featured = hub.featured | where: 'active', true -%}
+{%- assign active_featured = hub.featured | where_exp: 'item', 'item.active == true' -%}
+{%- assign sorted_featured = active_featured | sort: 'date_sort' -%}
+{%- assign sorted_featured_size = sorted_featured | size -%}
 
 <section class="card-profile hub-card" itemscope itemtype="https://schema.org/Person">
   <div class="card-profile__grid">
@@ -38,10 +40,10 @@ permalink: /
     <div class="card-profile__content">
       <div class="card-profile__header">
         <h1 class="card-profile__title" itemprop="name">{{ hub.profile.title }}</h1>
-        {% if active_featured and active_featured.size > 0 %}
+        {% if sorted_featured_size > 0 %}
         <a class="card-profile__events-chip" href="#hub-featured-title">
-          <span class="card-profile__events-count">{{ active_featured.size }}</span>
-          <span>&Eacute;v&eacute;nement{% if active_featured.size > 1 %}s{% endif %} &agrave; venir</span>
+          <span class="card-profile__events-count">{{ sorted_featured_size }}</span>
+          <span>&Eacute;v&eacute;nement{% if sorted_featured_size > 1 %}s{% endif %} &agrave; venir</span>
         </a>
         {% endif %}
       </div>
@@ -114,6 +116,7 @@ permalink: /
 {% endif %}
 
 {% if hub.featured and hub.featured.size > 0 %}
+{% assign show_featured_carousel = sorted_featured_size > 2 %}
 <section class="hub-section hub-card hub-featured-panel" aria-labelledby="hub-featured-title">
   <header class="hub-featured__head hub-section__head">
     <div>
@@ -137,9 +140,10 @@ permalink: /
     </a>
     {% endif %}
   </header>
-  <div class="hub-featured__grid">
-    {% if active_featured and active_featured.size > 0 %}
-      {% for item in active_featured %}
+  <div class="hub-featured__body{% if show_featured_carousel %} hub-featured__body--carousel{% endif %}" {% if show_featured_carousel %}data-carousel{% endif %}>
+    <div class="hub-featured__grid{% if show_featured_carousel %} hub-featured__grid--carousel{% endif %}" {% if show_featured_carousel %}data-carousel-track{% endif %}>
+    {% if sorted_featured_size > 0 %}
+      {% for item in sorted_featured %}
       <article class="hub-featured__item">
         <header>
           {% if item.category %}
@@ -172,12 +176,25 @@ permalink: /
         <p>Rien &agrave; la une pour l'instant, mais revenez bient&ocirc;t.</p>
       </div>
     {% endif %}
+    </div>
+    {% if show_featured_carousel %}
+    <div class="hub-carousel__controls">
+      <button class="hub-carousel__btn" type="button" data-carousel-prev aria-label="Voir les &eacute;v&eacute;nements pr&eacute;c&eacute;dents">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="hub-carousel__btn" type="button" data-carousel-next aria-label="Voir les &eacute;v&eacute;nements suivants">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endif %}
 
-{% assign active_highlights = hub.highlights | where: 'active', true %}
-{% if active_highlights and active_highlights.size > 0 %}
+{% assign active_highlights = hub.highlights | where_exp: 'event', 'event.active == true' %}
+{% assign sorted_highlights = active_highlights | sort: 'date_sort' %}
+{% assign sorted_highlights_size = sorted_highlights | size %}
+{% if sorted_highlights_size > 0 %}
 <section class="hub-section hub-card hub-timeline" aria-labelledby="hub-highlights-title">
   <header class="hub-timeline__head">
     <div>
@@ -190,11 +207,11 @@ permalink: /
       {% endif %}
     </div>
     <span class="hub-timeline__count">
-      {{ active_highlights.size }} rendez-vous cl&eacute;{% if active_highlights.size > 1 %}s{% endif %}
+      {{ sorted_highlights_size }} rendez-vous cl&eacute;{% if sorted_highlights_size > 1 %}s{% endif %}
     </span>
   </header>
   <div class="hub-timeline__grid">
-    {% for event in active_highlights %}
+    {% for event in sorted_highlights %}
     <article class="hub-timeline__item">
       <header>
         {% if event.tag %}

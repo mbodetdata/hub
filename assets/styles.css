@@ -510,6 +510,28 @@ button:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.hub-featured__body {
+  display: grid;
+  gap: 1rem;
+}
+
+.hub-featured__grid--carousel {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.25rem;
+}
+
+.hub-featured__grid--carousel::-webkit-scrollbar { display: none; }
+
+.hub-featured__grid--carousel .hub-featured__item {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  min-width: 260px;
+  scroll-snap-align: start;
+}
+
 .hub-featured__item {
   padding: 1.25rem 1.4rem;
   border-radius: var(--radius);
@@ -576,6 +598,36 @@ button:focus-visible {
 .hub-featured__link svg {
   width: 18px;
   height: 18px;
+}
+
+.hub-carousel__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.hub-carousel__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.hub-carousel__btn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hub-carousel__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 /* TIMELINE ------------------------------------------------------------- */
@@ -714,5 +766,9 @@ button:focus-visible {
   .hub-featured__head {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hub-featured__grid--carousel .hub-featured__item {
+    flex: 0 0 100%;
   }
 }
