@@ -451,13 +451,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 .hub-contact-card__value { color: var(--muted); font-size: 0.92rem; }
 .hub-contact-card__chevron { font-size: 1.4rem; color: var(--muted); }
 
-.hub-footer {
-  text-align: center;
-  padding: 1rem 1.5rem 3rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 @media (max-width: 1024px) {
   .hub-hero { grid-template-columns: 1fr; }
   .hub-hero__body { order: -1; }
@@ -469,4 +462,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   .hub-btn--about { width: 100%; }
   .hub-link-card, .hub-contact-card { grid-template-columns: 1fr; }
   .hub-link-card__arrow, .hub-contact-card__chevron { justify-self: flex-end; }
+}
+
+@media (min-width: 960px) {
+  .hub-meta-list--cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
