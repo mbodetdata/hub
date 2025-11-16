@@ -40,7 +40,19 @@ permalink: /
       <p class="card-profile__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
       {% endif %}
       {% if hub.profile.intro %}
-      <p class="card-profile__intro" itemprop="description">{{ hub.profile.intro }}</p>
+      {% assign story_blocks = hub.profile.intro | split: '||' %}
+      <div class="card-profile__intro" itemprop="description">
+        {% for block in story_blocks %}
+        {% assign parts = block | split: '::' %}
+        <p>
+          {% if parts.size > 1 %}
+          <strong>{{ parts[0] | strip }}</strong> {{ parts[1] | strip }}
+          {% else %}
+          {{ block | strip }}
+          {% endif %}
+        </p>
+        {% endfor %}
+      </div>
       {% endif %}
     </div>
   </div>

@@ -147,15 +147,49 @@ button:focus-visible {
 
 .card-profile__role {
   margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  color: var(--brand-2);
+  font-size: 1.12rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-profile__role::before,
+.card-profile__role::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4));
 }
 
 .card-profile__intro {
-  margin: 0;
-  font-size: 1.05rem;
+  margin: 1rem 0 0;
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 0.85rem;
+  font-size: 1rem;
   color: var(--fg);
+}
+
+.card-profile__intro p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.card-profile__intro strong {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-2);
+  margin-bottom: 0.15rem;
 }
 
 .card-profile__actions {
