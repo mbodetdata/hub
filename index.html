@@ -94,12 +94,6 @@ permalink: /
     {% if hub.links_section.eyebrow %}
     <p class="hub-eyebrow">{{ hub.links_section.eyebrow }}</p>
     {% endif %}
-    <div>
-      <h2 id="hub-links-title" class="hub-section__title">{{ hub.links_section.title }}</h2>
-      {% if hub.links_section.subtitle %}
-      <p class="hub-section__subtitle">{{ hub.links_section.subtitle }}</p>
-      {% endif %}
-    </div>
   </header>
   <div class="hub-links-grid">
     {% assign ordered_links = hub.links | sort: 'order' %}

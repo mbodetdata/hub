@@ -60,6 +60,12 @@
   },
   "contacts": [
     {
+      "label": "Prendre rendez-vous",
+      "value": "Calendrier Outlook",
+      "url": "https://outlook.office.com/book/meeting@bmdata.fr/",
+      "icon": "calendar"
+    },
+    {
       "label": "contact@bmdata.fr",
       "value": "contact@bmdata.fr",
       "url": "mailto:contact@bmdata.fr",
@@ -70,12 +76,6 @@
       "value": "+33 6 70 21 09 28",
       "url": "tel:+33670210928",
       "icon": "phone"
-    },
-    {
-      "label": "Booking",
-      "value": "Calendrier Outlook",
-      "url": "https://outlook.office.com/book/meeting@bmdata.fr/",
-      "icon": "calendar"
     }
   ],
   "highlights_section": {
