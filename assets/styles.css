@@ -210,6 +210,7 @@ button:focus-visible {
 .card-profile__contacts {
   display: grid;
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .card-profile__contacts-head {
@@ -267,17 +268,23 @@ button:focus-visible {
 }
 
 .contact-chip__body {
-  display: grid;
-  gap: 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
 }
 
 .contact-chip__label {
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-chip__value {
   color: var(--muted);
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .contact-chip__arrow svg {
