@@ -88,6 +88,64 @@ permalink: /
   {% endif %}
 </section>
 
+{% assign active_featured = hub.featured | where: 'active', true %}
+{% if hub.featured and active_featured and active_featured.size > 0 %}
+<section class="hub-section hub-card hub-featured-panel" aria-labelledby="hub-featured-title">
+  <header class="hub-featured__head hub-section__head">
+    <div>
+      {% if hub.featured_section.eyebrow %}
+      <p class="hub-eyebrow">{{ hub.featured_section.eyebrow }}</p>
+      {% endif %}
+      <h2 id="hub-featured-title" class="hub-section__title">
+        {{ hub.featured_section.title | default: '&Agrave; la une' }}
+      </h2>
+      {% if hub.featured_section.subtitle %}
+      <p class="hub-section__subtitle">{{ hub.featured_section.subtitle }}</p>
+      {% endif %}
+    </div>
+    {% if hub.featured_section.cta_url %}
+    <a class="hub-featured__cta" href="{{ hub.featured_section.cta_url }}" target="_blank" rel="noopener">
+      {{ hub.featured_section.cta_label | default: 'Tout voir' }}
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    {% endif %}
+  </header>
+  <div class="hub-featured__grid">
+    {% for item in active_featured %}
+    <article class="hub-featured__item">
+      <header>
+        {% if item.category %}
+        <span class="hub-featured__pill">{{ item.category }}</span>
+        {% endif %}
+        {% if item.date %}
+        <span class="hub-featured__meta">{{ item.date }}</span>
+        {% endif %}
+      </header>
+      <h3>{{ item.title }}</h3>
+      {% if item.summary %}
+      <p>{{ item.summary }}</p>
+      {% endif %}
+      {% if item.location %}
+      <p class="hub-featured__location">{{ item.location }}</p>
+      {% endif %}
+      {% if item.cta_url %}
+      <a class="hub-featured__link" href="{{ item.cta_url }}" target="_blank" rel="noopener">
+        {{ item.cta_label | default: 'En savoir plus' }}
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 {% if hub.links and hub.links.size > 0 %}
 <section class="hub-section hub-card hub-links-panel" aria-labelledby="hub-links-title">
   <header class="hub-section__head">

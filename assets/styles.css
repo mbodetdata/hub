@@ -428,6 +428,107 @@ button:focus-visible {
   background: rgba(124, 93, 255, 0.12);
 }
 
+/* FEATURED ------------------------------------------------------------- */
+
+.hub-featured-panel {
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.hub-featured__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hub-featured__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+  color: var(--brand-3);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.hub-featured__cta svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hub-featured__cta:hover {
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hub-featured__grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.hub-featured__item {
+  padding: 1.25rem 1.4rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.hub-featured__item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.hub-featured__pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(124, 93, 255, 0.15);
+  color: var(--brand-2);
+  font-weight: 600;
+}
+
+.hub-featured__meta {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hub-featured__item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.hub-featured__item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hub-featured__location {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.hub-featured__link {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-weight: 600;
+  color: var(--brand-3);
+}
+
+.hub-featured__link svg {
+  width: 18px;
+  height: 18px;
+}
+
 /* TIMELINE ------------------------------------------------------------- */
 
 .hub-timeline__head {
@@ -545,11 +646,17 @@ button:focus-visible {
 
   .contact-ribbon,
   .hub-links-grid,
-  .hub-timeline__grid {
+  .hub-timeline__grid,
+  .hub-featured__grid {
     grid-template-columns: 1fr;
   }
 
   .hub-section__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hub-featured__head {
     flex-direction: column;
     align-items: flex-start;
   }

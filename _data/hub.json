@@ -78,6 +78,45 @@
       "icon": "phone"
     }
   ],
+  "featured_section": {
+    "eyebrow": "\u00c0 la une",
+    "title": "Temps forts du moment",
+    "subtitle": "D\u00e9couvrez les prochains rendez-vous, ateliers ou contenus signature.",
+    "cta_label": "Voir tout le calendrier",
+    "cta_url": "https://bmdata.fr/agenda"
+  },
+  "featured": [
+    {
+      "active": true,
+      "category": "Webinaire",
+      "title": "Data Pulse : d\u00e9ployer un cockpit financier fiable",
+      "summary": "Pr\u00e9sentation en direct des m\u00e9thodes que j'utilise pour stabiliser vos KPI finance sous Power BI.",
+      "date": "Mardi 26 nov. \u00b7 12h30",
+      "location": "Live Teams",
+      "cta_label": "S'inscrire gratuitement",
+      "cta_url": "https://example.com/data-pulse"
+    },
+    {
+      "active": true,
+      "category": "Atelier clients",
+      "title": "Audit express de vos dashboards",
+      "summary": "30 minutes pour passer votre stack BI au crible et repartir avec un plan d'action.",
+      "date": "Sessions du 2 au 6 d\u00e9c.",
+      "location": "Visio 1:1",
+      "cta_label": "Je r\u00e9serve un cr\u00e9neau",
+      "cta_url": "https://example.com/audit-dashboard"
+    },
+    {
+      "active": false,
+      "category": "Conf\u00e9rence",
+      "title": "Salon Tech4Business \u2013 table ronde",
+      "summary": "Je partage mon retour d'exp\u00e9rience sur la gouvernance de la donn\u00e9e et l'alignement IT/terrain.",
+      "date": "Samedi 11 janvier \u00b7 15h45",
+      "location": "Bordeaux",
+      "cta_label": "\u00cAtre averti",
+      "cta_url": "https://example.com/tech4business"
+    }
+  ],
   "highlights_section": {
     "eyebrow": "\u00c0 la une",
     "title": "Agenda & publications",
