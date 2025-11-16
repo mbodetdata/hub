@@ -1,0 +1,100 @@
+{
+  "profile": {
+    "title": "Martial Bodet",
+    "role": "Au service de votre entreprise",
+    "intro": "Je transforme vos données en un outil simple qui vous fait gagner du temps et vous aide à décider plus vite.",
+    "photo": "/assets/img/Photo_profil.webp",
+    "about_url": "https://bmdata.fr/about-me/",
+    "about_label": "Qui je suis ?",
+    "badges": [
+      "Précision absolue",
+      "Clarté instantanée",
+      "Temps libéré"
+    ]
+  },
+  "links_section": {
+    "eyebrow": "Accès direct",
+    "title": "Contactez-moi en un clic",
+    "subtitle": "LinkedIn, rendez-vous, références ou site : choisissez le canal le plus utile pour avancer."
+  },
+  "links": [
+    {
+      "label": "BMData",
+      "url": "https://bmdata.fr",
+      "icon": "bmdata",
+      "group":"site",
+      "order": 1
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/martial-bodet/",
+      "icon": "linkedin",
+      "group": "linkedin",
+      "order": 2
+    },
+    {
+      "label": "Page entreprise",
+      "url": "https://www.linkedin.com/company/bmdata/",
+      "icon": "linkedin",
+      "group": "linkedin",
+      "order": 3
+    },
+    {
+      "label": "Profil Malt",
+      "url": "https://www.malt.fr/profile/martialbodet1",
+      "icon": "globe",
+      "group":"site",
+      "order": 4
+    }
+  ],
+  "contacts_section": {
+    "eyebrow": "Coordonnées",
+    "title": "Toujours joignable",
+    "subtitle": "Une réponse sous 24h ouvrées, et la possibilité de réserver un créneau directement."
+  },
+  "contacts": [
+    {
+      "label": "contact@bmdata.fr",
+      "value": "contact@bmdata.fr",
+      "url": "mailto:contact@bmdata.fr",
+      "icon": "mail"
+    },
+    {
+      "label": "06 70 21 09 28",
+      "value": "+33 6 70 21 09 28",
+      "url": "tel:+33670210928",
+      "icon": "phone"
+    },
+    {
+      "label": "Booking",
+      "value": "Calendrier Outlook",
+      "url": "https://outlook.office.com/book/meeting@bmdata.fr/",
+      "icon": "calendar"
+    }
+  ],
+  "highlights_section": {
+    "eyebrow": "À la une",
+    "title": "Agenda & publications",
+    "subtitle": "Webinaires, conférences ou articles fraîchement publiés : voici les temps forts à venir."
+  },
+  "highlights": [
+    {
+      "active": false,
+      "tag": "Webinaire",
+      "title": "Optimiser vos pipelines Talend en 2025",
+      "summary": "45 minutes de retours d'expérience sur les architectures hybrides et les bonnes pratiques de monitoring.",
+      "meta": "Jeudi 12 déc. · 11h00",
+      "cta_label": "Réserver sa place",
+      "cta_url": "https://example.com/talend-webinar"
+    },
+    {
+      "active": false,
+      "tag": "Conférence",
+      "title": "Modern BI Tour — Bordeaux",
+      "summary": "Une session live pour découvrir comment mêler Power BI et automation pour accélérer vos décisions.",
+      "meta": "17 janvier · 18h30",
+      "cta_label": "Demander une invitation",
+      "cta_url": "https://example.com/modern-bi-tour"
+    }
+  ]
+}
