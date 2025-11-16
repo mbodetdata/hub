@@ -239,29 +239,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 0.95rem;
-  padding: 0.4rem 0.95rem;
-  min-height: 3.15rem;
-  border-radius: calc(var(--radius) + 1rem);
+  gap: 1.15rem;
+  padding: 0.85rem 1.45rem;
+  min-height: 4.25rem;
+  border-radius: calc(var(--radius) + 1.35rem);
   border: 1px solid transparent;
   overflow: hidden;
   color: var(--fg);
   background:
-    linear-gradient(120deg, rgba(4, 8, 20, 0.92), rgba(7, 13, 27, 0.82)) padding-box,
-    var(--cta-gradient, linear-gradient(125deg, rgba(124, 93, 255, 0.65), rgba(38, 224, 180, 0.4))) border-box;
-  box-shadow: 0 25px 45px rgba(3, 5, 13, 0.5);
-  backdrop-filter: blur(22px);
-  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+    linear-gradient(145deg, rgba(3, 6, 18, 0.96), rgba(11, 24, 46, 0.85), rgba(23, 52, 75, 0.68)) padding-box,
+    var(--cta-gradient, linear-gradient(125deg, rgba(124, 93, 255, 0.75), rgba(38, 224, 180, 0.55))) border-box;
+  box-shadow: 0 38px 65px rgba(3, 5, 13, 0.62);
+  backdrop-filter: blur(28px);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
   isolation: isolate;
 }
 
 .hub-cta::before {
   content: "";
   position: absolute;
-  inset: 1px;
+  inset: 2px;
   border-radius: inherit;
-  background: linear-gradient(110deg, rgba(255, 255, 255, 0.2), transparent 70%);
-  opacity: 0.35;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.45), transparent 65%);
+  opacity: 0.55;
   pointer-events: none;
   transition: opacity 250ms ease;
   z-index: -1;
@@ -270,52 +270,53 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 .hub-cta::after {
   content: "";
   position: absolute;
-  inset: -60% 15% auto -35%;
-  height: 120%;
+  inset: -65% 10% auto -40%;
+  height: 135%;
   border-radius: 999px;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent);
-  opacity: 0.25;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.38), transparent 45%);
+  opacity: 0.3;
   pointer-events: none;
   transition: opacity 300ms ease, transform 450ms ease;
   z-index: -2;
 }
 
 .hub-cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 60px rgba(3, 5, 13, 0.65);
+  transform: translateY(-6px);
+  box-shadow: 0 48px 90px rgba(3, 5, 13, 0.7);
 }
-.hub-cta:hover::before { opacity: 0.8; }
-.hub-cta:hover::after { opacity: 0.45; transform: translateX(12px) rotate(3deg); }
+.hub-cta:hover::before { opacity: 0.9; }
+.hub-cta:hover::after { opacity: 0.5; transform: translateX(18px) rotate(4deg); }
 
 .hub-cta__icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  width: 48px;
+  height: 48px;
+  border-radius: 1.05rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 14px 18px rgba(3, 5, 13, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 20px 26px rgba(3, 5, 13, 0.5);
+  backdrop-filter: blur(16px);
   overflow: hidden;
 }
 
 .hub-cta__icon::before {
   content: "";
   position: absolute;
-  inset: 5px;
+  inset: 6px;
   border-radius: inherit;
   background: var(--cta-gradient, linear-gradient(125deg, rgba(124, 93, 255, 0.95), rgba(38, 224, 180, 0.35)));
-  opacity: 0.4;
-  filter: blur(6px);
+  opacity: 0.55;
+  filter: blur(8px);
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
 .hub-cta:hover .hub-cta__icon::before { opacity: 0.8; transform: scale(1.05); }
 
-.hub-cta__icon svg { width: 19px; height: 19px; position: relative; z-index: 1; }
+.hub-cta__icon svg { width: 20px; height: 20px; position: relative; z-index: 1; }
 
 .hub-cta__body {
   min-width: 0;
@@ -339,29 +340,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 
 .hub-cta__label {
   font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-  text-transform: none;
+  font-size: 1.02rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   line-height: 1.35;
   white-space: normal;
+  color: rgba(247, 248, 255, 0.92);
 }
 .hub-cta__value {
-  font-size: 0.86rem;
-  color: rgba(247, 248, 255, 0.78);
-  letter-spacing: 0.02em;
+  font-size: 0.94rem;
+  color: rgba(247, 248, 255, 0.9);
+  letter-spacing: 0.04em;
   text-transform: none;
   line-height: 1.3;
   white-space: normal;
 }
 
 .hub-cta__body--value .hub-cta__value {
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
+  font-size: 1.12rem;
+  letter-spacing: 0.06em;
 }
 
 .hub-cta__support {
   margin: 0.4rem 0 0;
-  padding-left: calc(38px + 0.95rem + 0.6rem);
+  padding-left: calc(48px + 1.15rem + 0.6rem);
   font-size: 0.85rem;
   color: rgba(247, 248, 255, 0.65);
   letter-spacing: 0.04em;
@@ -369,28 +371,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 }
 
 .hub-cta__arrow {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--fg);
-  transition: transform 220ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease;
+  color: rgba(255, 255, 255, 0.92);
+  transition: transform 220ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 220ms ease;
   position: relative;
   z-index: 1;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 12px 20px rgba(3, 5, 13, 0.55);
 }
 
-.hub-cta__arrow svg { width: 16px; height: 16px; }
+.hub-cta__arrow svg { width: 18px; height: 18px; }
 
 .hub-cta:hover .hub-cta__arrow {
-  transform: translateX(6px);
-  background: var(--cta-gradient, linear-gradient(125deg, rgba(124, 93, 255, 0.9), rgba(38, 224, 180, 0.45)));
+  transform: translateX(8px);
+  background: var(--cta-gradient, linear-gradient(125deg, rgba(124, 93, 255, 0.92), rgba(38, 224, 180, 0.55)));
   border-color: transparent;
   color: #050813;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
 }
 
 .hub-cta[data-cta="calendar"] { --cta-gradient: linear-gradient(125deg, rgba(124, 93, 255, 0.9), rgba(43, 212, 143, 0.55)); }
@@ -601,5 +604,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 }
 
 @media (min-width: 960px) {
-  .hub-meta-list--cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hub-meta-list--cards {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.075fr) minmax(0, 1.075fr);
+  }
+
+  .hub-cta[data-cta="mail"] .hub-cta__value,
+  .hub-cta[data-cta="phone"] .hub-cta__value {
+    white-space: nowrap;
+  }
 }
