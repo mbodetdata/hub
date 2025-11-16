@@ -8,8 +8,10 @@ permalink: /
 {%- assign calendar_contact = hub.contacts | where: 'icon', 'calendar' | first -%}
 {%- assign email_contact = hub.contacts | where: 'icon', 'mail' | first -%}
 {%- assign phone_contact = hub.contacts | where: 'icon', 'phone' | first -%}
-{%- assign active_featured = hub.featured | where_exp: 'item', 'item.active == true' -%}
-{%- assign sorted_featured = active_featured | sort: 'date_sort' -%}
+{%- assign empty_array = '' | split: '' -%}
+{%- assign featured_list = hub.featured | default: empty_array -%}
+{%- assign active_featured = featured_list | where_exp: 'item', 'item.active == true' | default: empty_array -%}
+{%- assign sorted_featured = active_featured | sort: 'date_sort' | default: empty_array -%}
 {%- assign sorted_featured_size = sorted_featured | size -%}
 
 <section class="card-profile hub-card" itemscope itemtype="https://schema.org/Person">
@@ -115,7 +117,7 @@ permalink: /
 </section>
 {% endif %}
 
-{% if hub.featured and hub.featured.size > 0 %}
+{% if featured_list and featured_list.size > 0 %}
 {% assign show_featured_carousel = sorted_featured_size > 2 %}
 <section class="hub-section hub-card hub-featured-panel" aria-labelledby="hub-featured-title">
   <header class="hub-featured__head hub-section__head">
@@ -191,8 +193,9 @@ permalink: /
 </section>
 {% endif %}
 
-{% assign active_highlights = hub.highlights | where_exp: 'event', 'event.active == true' %}
-{% assign sorted_highlights = active_highlights | sort: 'date_sort' %}
+{% assign highlights_list = hub.highlights | default: empty_array %}
+{% assign active_highlights = highlights_list | where_exp: 'event', 'event.active == true' | default: empty_array %}
+{% assign sorted_highlights = active_highlights | sort: 'date_sort' | default: empty_array %}
 {% assign sorted_highlights_size = sorted_highlights | size %}
 {% if sorted_highlights_size > 0 %}
 <section class="hub-section hub-card hub-timeline" aria-labelledby="hub-highlights-title">
