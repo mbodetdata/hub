@@ -91,7 +91,7 @@
       "cta_url": "https://example.com/audit-dashboard"
     },
     {
-      "active": false,
+      "active": true,
       "category": "Conférence",
       "title": "Salon Tech4Business – table ronde",
       "summary": "Je partage mon retour d'expérience sur la gouvernance de la donnée et l'alignement IT/terrain.",
