@@ -67,6 +67,9 @@ permalink: /
             </span>
             <span class="hub-cta__arrow" aria-hidden="true">&rsaquo;</span>
           </a>
+          {% if calendar_contact.value %}
+          <p class="hub-cta__support">{{ calendar_contact.value }}</p>
+          {% endif %}
         </dd>
       </div>
       {% endif %}
