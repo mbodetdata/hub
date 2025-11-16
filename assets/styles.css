@@ -102,7 +102,8 @@ button:focus-visible {
 /* HERO / DIGITAL CARD -------------------------------------------------- */
 
 .card-profile {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
@@ -543,10 +544,6 @@ button:focus-visible {
     padding: 1.5rem;
   }
 
-  .card-profile__badges {
-    justify-content: center;
-  }
-
   .contact-ribbon,
   .hub-links-grid,
   .hub-timeline__grid {
@@ -557,4 +554,10 @@ button:focus-visible {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+.card-profile__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
 }
