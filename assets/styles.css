@@ -140,9 +140,47 @@ button:focus-visible {
   gap: 0.85rem;
 }
 
+.card-profile__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 .card-profile__title {
   font-size: clamp(2rem, 4vw, 3rem);
   margin: 0;
+}
+
+.card-profile__events-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem 0.45rem 0.45rem;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fg);
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.card-profile__events-chip:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--brand-3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card-profile__events-count {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
 .card-profile__role {
@@ -627,6 +665,12 @@ button:focus-visible {
   .card-profile__actions .vc-btn {
     flex: 1 1 45%;
     font-size: 0.82rem;
+  }
+
+  .card-profile__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .contact-chip {
