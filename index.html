@@ -15,23 +15,12 @@ permalink: /
       <figure class="card-profile__photo">
         <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="lazy" decoding="async">
       </figure>
-      <div class="card-profile__stamp" aria-hidden="true">
-        <span>Carte connect&eacute;e</span>
-        <span>BMData</span>
-      </div>
     </div>
     <div class="card-profile__content">
       <p class="card-profile__eyebrow">{{ hub.profile.eyebrow | default: 'Carte de visite num&eacute;rique' }}</p>
       <h1 class="card-profile__title" itemprop="name">{{ hub.profile.title }}</h1>
       {% if hub.profile.role %}
       <p class="card-profile__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
-      {% endif %}
-      {% if hub.profile.badges and hub.profile.badges.size > 0 %}
-      <ul class="card-profile__badges">
-        {% for badge in hub.profile.badges %}
-        <li>{{ badge }}</li>
-        {% endfor %}
-      </ul>
       {% endif %}
       {% if hub.profile.intro %}
       <p class="card-profile__intro" itemprop="description">{{ hub.profile.intro }}</p>
@@ -55,16 +44,6 @@ permalink: /
       </div>
     </div>
   </div>
-  {% if hub.profile.stats and hub.profile.stats.size > 0 %}
-  <dl class="card-profile__stats" aria-label="Indicateurs cl&eacute;s">
-    {% for stat in hub.profile.stats %}
-    <div class="card-profile__stat">
-      <dd>{{ stat.value }}</dd>
-      <dt>{{ stat.label }}</dt>
-    </div>
-    {% endfor %}
-  </dl>
-  {% endif %}
   {% if hub.contacts and hub.contacts.size > 0 %}
   <div class="card-profile__contacts">
     <header class="card-profile__contacts-head">

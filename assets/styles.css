@@ -135,18 +135,6 @@ button:focus-visible {
   object-fit: cover;
 }
 
-.card-profile__stamp {
-  display: inline-flex;
-  gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .card-profile__content {
   display: grid;
   gap: 0.85rem;
@@ -170,23 +158,6 @@ button:focus-visible {
   color: var(--muted);
   font-size: 1.05rem;
   letter-spacing: 0.02em;
-}
-
-.card-profile__badges {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.card-profile__badges li {
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
-  font-size: 0.9rem;
 }
 
 .card-profile__intro {
@@ -234,34 +205,6 @@ button:focus-visible {
 
 .vc-btn:hover { transform: translateY(-2px); }
 .vc-btn--ghost:hover { border-color: rgba(255, 255, 255, 0.5); }
-
-.card-profile__stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin: 0;
-}
-
-.card-profile__stat {
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.card-profile__stat dd {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.card-profile__stat dt {
-  margin: 0;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
 
 .card-profile__contacts {
   display: grid;
