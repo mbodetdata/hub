@@ -170,6 +170,9 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 340px;
 }
 
 .vc-btn {
@@ -291,6 +294,7 @@ button:focus-visible {
   margin-top: 0.25rem;
   font-size: 0.85rem;
   color: var(--brand-3);
+  text-align: center;
 }
 
 /* GENERIC SECTION ------------------------------------------------------ */

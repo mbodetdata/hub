@@ -15,16 +15,6 @@ permalink: /
       <figure class="card-profile__photo">
         <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="lazy" decoding="async">
       </figure>
-    </div>
-    <div class="card-profile__content">
-      <p class="card-profile__eyebrow">{{ hub.profile.eyebrow | default: 'Carte de visite num&eacute;rique' }}</p>
-      <h1 class="card-profile__title" itemprop="name">{{ hub.profile.title }}</h1>
-      {% if hub.profile.role %}
-      <p class="card-profile__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
-      {% endif %}
-      {% if hub.profile.intro %}
-      <p class="card-profile__intro" itemprop="description">{{ hub.profile.intro }}</p>
-      {% endif %}
       <div class="card-profile__actions">
         <button class="vc-btn vc-btn--primary" type="button"
                 data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
@@ -42,6 +32,17 @@ permalink: /
         </a>
         {% endif %}
       </div>
+      <small class="hub-share__feedback" aria-live="polite"></small>
+    </div>
+    <div class="card-profile__content">
+      <p class="card-profile__eyebrow">{{ hub.profile.eyebrow | default: 'Carte de visite num&eacute;rique' }}</p>
+      <h1 class="card-profile__title" itemprop="name">{{ hub.profile.title }}</h1>
+      {% if hub.profile.role %}
+      <p class="card-profile__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
+      {% endif %}
+      {% if hub.profile.intro %}
+      <p class="card-profile__intro" itemprop="description">{{ hub.profile.intro }}</p>
+      {% endif %}
     </div>
   </div>
   {% if hub.contacts and hub.contacts.size > 0 %}
