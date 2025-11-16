@@ -110,7 +110,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
   gap: clamp(1.5rem, 3vw, 2.75rem);
-  align-items: center;
+  align-items: flex-start;
 }
 
 .card-profile__portrait {
@@ -138,14 +138,6 @@ button:focus-visible {
 .card-profile__content {
   display: grid;
   gap: 0.85rem;
-}
-
-.card-profile__eyebrow {
-  color: var(--brand-2);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.8rem;
-  margin: 0;
 }
 
 .card-profile__title {
