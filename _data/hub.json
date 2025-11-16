@@ -2,26 +2,13 @@
   "profile": {
     "title": "Martial Bodet",
     "role": "Au service de votre entreprise",
-    "intro": "Fichiers partout et outils qui d\u00e9crochent ?::Je remets tout \u00e0 plat et vous accompagne jusqu'au changement de syst\u00e8me s'il le faut.||Des donn\u00e9es inexploitées ?::Je les transforme en vues claires et faciles \u00e0 piloter par vos \u00e9quipes.||R\u00e9sultat ?::Vous gagnez du temps, vous y voyez net et vous d\u00e9cidez avec confiance.",
+    "intro": "Fichiers partout et outils qui décrochent ?::Je remets tout à plat et vous accompagne jusqu'au changement de système s'il le faut.||Des données inexploitées ?::Je les transforme en vues claires et faciles à piloter par vos équipes.||Résultat ?::Vous gagnez du temps, vous y voyez net et vous décidez avec confiance.",
     "photo": "/assets/img/Photo_profil.webp",
     "about_url": "https://bmdata.fr/about-me/",
-    "about_label": "Qui je suis ?",
-    "eyebrow": "Carte de visite num\u00e9rique",
-    "badges": [
-      "Pr\u00e9cision absolue",
-      "Clart\u00e9 instantan\u00e9e",
-      "Temps lib\u00e9r\u00e9"
-    ],
-    "stats": [
-      { "value": "+60", "label": "projets data livr\u00e9s" },
-      { "value": "< 24h", "label": "temps de r\u00e9ponse" },
-      { "value": "FR / EN", "label": "collaboration bilingue" }
-    ]
+    "about_label": "Qui je suis ?"
   },
   "links_section": {
-    "eyebrow": "Acc\u00e8s direct",
-    "title": "Contactez-moi en un clic",
-    "subtitle": "LinkedIn, rendez-vous, r\u00e9f\u00e9rences ou site : choisissez le canal le plus utile pour avancer."
+    "eyebrow": "Accès direct"
   },
   "links": [
     {
@@ -53,11 +40,6 @@
       "order": 4
     }
   ],
-  "contacts_section": {
-    "eyebrow": "Coordonn\u00e9es",
-    "title": "Toujours joignable",
-    "subtitle": "Une r\u00e9ponse sous 24h ouvr\u00e9es, et la possibilit\u00e9 de r\u00e9server un cr\u00e9neau directement."
-  },
   "contacts": [
     {
       "label": "Prendre rendez-vous",
@@ -79,9 +61,9 @@
     }
   ],
   "featured_section": {
-    "eyebrow": "\u00c0 la une",
+    "eyebrow": "À la une",
     "title": "Temps forts du moment",
-    "subtitle": "D\u00e9couvrez les prochains rendez-vous, ateliers ou contenus signature.",
+    "subtitle": "Découvrez les prochains rendez-vous, ateliers ou contenus signature.",
     "cta_label": "Voir tout le calendrier",
     "cta_url": "https://bmdata.fr/agenda"
   },
@@ -89,9 +71,9 @@
     {
       "active": true,
       "category": "Webinaire",
-      "title": "Data Pulse : d\u00e9ployer un cockpit financier fiable",
-      "summary": "Pr\u00e9sentation en direct des m\u00e9thodes que j'utilise pour stabiliser vos KPI finance sous Power BI.",
-      "date": "Mardi 26 nov. \u00b7 12h30",
+      "title": "Data Pulse : déployer un cockpit financier fiable",
+      "summary": "Présentation en direct des méthodes que j'utilise pour stabiliser vos KPI finance sous Power BI.",
+      "date": "Mardi 26 nov. · 12h30",
       "location": "Live Teams",
       "date_sort": "2025-11-26T12:30:00+01:00",
       "cta_label": "S'inscrire gratuitement",
@@ -102,46 +84,46 @@
       "category": "Atelier clients",
       "title": "Audit express de vos dashboards",
       "summary": "30 minutes pour passer votre stack BI au crible et repartir avec un plan d'action.",
-      "date": "Sessions du 2 au 6 d\u00e9c.",
+      "date": "Sessions du 2 au 6 déc.",
       "location": "Visio 1:1",
       "date_sort": "2025-12-02T09:00:00+01:00",
-      "cta_label": "Je r\u00e9serve un cr\u00e9neau",
+      "cta_label": "Je réserve un créneau",
       "cta_url": "https://example.com/audit-dashboard"
     },
     {
       "active": false,
-      "category": "Conf\u00e9rence",
-      "title": "Salon Tech4Business \u2013 table ronde",
-      "summary": "Je partage mon retour d'exp\u00e9rience sur la gouvernance de la donn\u00e9e et l'alignement IT/terrain.",
-      "date": "Samedi 11 janvier \u00b7 15h45",
+      "category": "Conférence",
+      "title": "Salon Tech4Business – table ronde",
+      "summary": "Je partage mon retour d'expérience sur la gouvernance de la donnée et l'alignement IT/terrain.",
+      "date": "Samedi 11 janvier · 15h45",
       "location": "Bordeaux",
       "date_sort": "2026-01-11T15:45:00+01:00",
-      "cta_label": "\u00cAtre averti",
+      "cta_label": "Être averti",
       "cta_url": "https://example.com/tech4business"
     }
   ],
   "highlights_section": {
-    "eyebrow": "\u00c0 la une",
+    "eyebrow": "À la une",
     "title": "Agenda & publications",
-    "subtitle": "Webinaires, conf\u00e9rences ou articles fra\u00eechement publi\u00e9s : voici les temps forts \u00e0 venir."
+    "subtitle": "Webinaires, conférences ou articles fraîchement publiés : voici les temps forts à venir."
   },
   "highlights": [
     {
       "active": false,
       "tag": "Webinaire",
       "title": "Optimiser vos pipelines Talend en 2025",
-      "summary": "45 minutes de retours d'exp\u00e9rience sur les architectures hybrides et les bonnes pratiques de monitoring.",
-      "meta": "Jeudi 12 d\u00e9c. \u00e0 11h00",
+      "summary": "45 minutes de retours d'expérience sur les architectures hybrides et les bonnes pratiques de monitoring.",
+      "meta": "Jeudi 12 déc. à 11h00",
       "date_sort": "2025-12-12T11:00:00+01:00",
-      "cta_label": "R\u00e9server sa place",
+      "cta_label": "Réserver sa place",
       "cta_url": "https://example.com/talend-webinar"
     },
     {
       "active": false,
-      "tag": "Conf\u00e9rence",
-      "title": "Modern BI Tour \u2013 Bordeaux",
-      "summary": "Une session live pour d\u00e9couvrir comment m\u00ealer Power BI et automation pour acc\u00e9l\u00e9rer vos d\u00e9cisions.",
-      "meta": "17 janvier \u00e0 18h30",
+      "tag": "Conférence",
+      "title": "Modern BI Tour – Bordeaux",
+      "summary": "Une session live pour découvrir comment mêler Power BI et automation pour accélérer vos décisions.",
+      "meta": "17 janvier à 18h30",
       "date_sort": "2026-01-17T18:30:00+01:00",
       "cta_label": "Demander une invitation",
       "cta_url": "https://example.com/modern-bi-tour"
