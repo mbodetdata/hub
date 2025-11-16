@@ -101,15 +101,58 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   position: relative;
 }
 
-.hub-hero__media { display: grid; }
+.hub-hero__media { display: grid; gap: 1rem; justify-items: center; }
 
 .hub-hero__photo {
-  border-radius: var(--radius-lg);
+  width: clamp(220px, 35vw, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   overflow: hidden;
   margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 25px 45px rgba(3, 5, 13, 0.65);
 }
+
+.hub-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hub-hero__share {
+  width: 100%;
+}
+
+.hub-share-btn {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  cursor: pointer;
+  color: inherit;
+  transition: border-color 150ms ease, transform 150ms ease, background 150ms ease;
+}
+
+.hub-share-btn:hover { border-color: rgba(255, 255, 255, 0.4); transform: translateY(-2px); }
+
+.hub-share-btn__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(124, 93, 255, 0.4), rgba(38, 224, 180, 0.25));
+}
+
+.hub-share-btn__icon svg { width: 24px; height: 24px; }
+
+.hub-share-btn__body { display: grid; gap: 0.1rem; text-align: left; }
+.hub-share-btn__label { font-weight: 600; }
+.hub-share-btn__hint { font-size: 0.85rem; color: var(--muted); }
 .hub-hero__body { display: grid; gap: 1.4rem; }
 
 .hub-hero__heading {
@@ -151,7 +194,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   align-items: center;
 }
 
-.hub-share__feedback { font-size: 0.92rem; color: var(--muted); min-height: 1.2em; }
+.hub-share__feedback { display: block; font-size: 0.85rem; color: var(--muted); min-height: 1.2em; text-align: center; }
 
 .hub-meta-list {
   margin: 0;
@@ -161,29 +204,81 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 }
 
 .hub-meta-list--cards {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .hub-meta-list__item {
   border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.85rem 1rem;
   background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .hub-meta-list__item--cta {
-  border-color: rgba(124, 93, 255, 0.35);
+  border-color: rgba(124, 93, 255, 0.4);
   background: rgba(124, 93, 255, 0.08);
 }
 
 .hub-meta-list dt {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   color: var(--muted);
 }
 
 .hub-meta-list dd {
-  margin: 0.35rem 0 0;
+  margin: 0.6rem 0 0;
+}
+
+.hub-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: calc(var(--radius) - 0.2rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.hub-cta:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.35); }
+
+.hub-cta__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+}
+
+.hub-cta__icon svg { width: 24px; height: 24px; }
+
+.hub-cta__body {
+  flex: 1;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.hub-cta__label { font-weight: 600; }
+.hub-cta__value { font-size: 0.85rem; color: var(--muted); }
+
+.hub-cta__arrow {
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.hub-cta[data-cta="calendar"] {
+  background: linear-gradient(135deg, rgba(124, 93, 255, 0.25), rgba(38, 224, 180, 0.15));
+}
+
+.hub-cta[data-cta="mail"] {
+  background: linear-gradient(135deg, rgba(90, 131, 255, 0.2), rgba(161, 117, 255, 0.18));
+}
+
+.hub-cta[data-cta="phone"] {
+  background: linear-gradient(135deg, rgba(38, 224, 180, 0.2), rgba(124, 93, 255, 0.2));
 }
 
 .hub-btn {
@@ -219,13 +314,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   color: #03050d;
 }
 
-.hub-btn--share {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .hub-btn--block { width: 100%; justify-content: center; }
-.hub-btn--meta { width: 100%; justify-content: flex-start; font-size: 0.95rem; }
 .hub-btn--about { width: 100%; justify-content: center; }
 
 .hub-eyebrow {
