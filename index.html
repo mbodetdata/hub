@@ -65,7 +65,12 @@ permalink: /
               <span class="hub-cta__label">R&eacute;server un cr&eacute;neau</span>
               <span class="hub-cta__value">{{ calendar_contact.value | default: 'Calendrier Outlook' }}</span>
             </span>
-            <span class="hub-cta__arrow" aria-hidden="true">&rsaquo;</span>
+            <span class="hub-cta__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </a>
           {% if calendar_contact.value %}
           <p class="hub-cta__support">{{ calendar_contact.value }}</p>
@@ -85,7 +90,12 @@ permalink: /
               <span class="hub-cta__label">Envoyer un email</span>
               <span class="hub-cta__value">R&eacute;ponse personnalis&eacute;e sous 24h</span>
             </span>
-            <span class="hub-cta__arrow" aria-hidden="true">&rsaquo;</span>
+            <span class="hub-cta__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </a>
           {% if email_contact.value %}
           <p class="hub-cta__support">{{ email_contact.value }}</p>
@@ -105,7 +115,12 @@ permalink: /
               <span class="hub-cta__label">Appel direct</span>
               <span class="hub-cta__value">Ligne prioritaire</span>
             </span>
-            <span class="hub-cta__arrow" aria-hidden="true">&rsaquo;</span>
+            <span class="hub-cta__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </a>
           {% if phone_contact.label %}
           <p class="hub-cta__support">{{ phone_contact.label }}</p>
