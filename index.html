@@ -14,10 +14,6 @@ permalink: /
     <figure class="hub-hero__photo">
       <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="lazy" decoding="async">
     </figure>
-    <div class="hub-hero__signature">
-      <span class="hub-hero__signature-label">BMdata &middot; Hub personnel</span>
-      <span class="hub-hero__signature-value">Toujours &agrave; jour</span>
-    </div>
   </div>
   <div class="hub-hero__body">
     <div class="hub-hero__header">
@@ -43,13 +39,6 @@ permalink: /
     {% if hub.profile.intro %}
     <p class="hub-hero__intro" itemprop="description">{{ hub.profile.intro }}</p>
     {% endif %}
-    {% if hub.profile.badges %}
-    <ul class="hub-hero__badges">
-      {% for badge in hub.profile.badges %}
-      <li>{{ badge }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
     <div class="hub-hero__cta">
       <div class="hub-hero__cta-group">
         {% if calendar_contact %}
@@ -69,17 +58,6 @@ permalink: /
       </div>
       <span class="hub-share__feedback" aria-live="polite"></span>
     </div>
-    {% assign hero_stats = hub.profile.stats %}
-    {% if hero_stats and hero_stats.size > 0 %}
-    <div class="hub-hero__stats">
-      {% for stat in hero_stats %}
-      <article class="hub-stat-card">
-        <p class="hub-stat-card__value">{{ stat.value }}</p>
-        <p class="hub-stat-card__label">{{ stat.label }}</p>
-      </article>
-      {% endfor %}
-    </div>
-    {% endif %}
     <dl class="hub-meta-list hub-meta-list--cards">
       {% if calendar_contact %}
       <div class="hub-meta-list__item hub-meta-list__item--cta">
