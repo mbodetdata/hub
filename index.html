@@ -44,17 +44,6 @@ permalink: /
       {% endif %}
       {% if hub.contacts and hub.contacts.size > 0 %}
       <div class="card-profile__contacts">
-        <header class="card-profile__contacts-head">
-          {% if hub.contacts_section.eyebrow %}
-          <p class="hub-eyebrow">{{ hub.contacts_section.eyebrow }}</p>
-          {% endif %}
-          <div>
-            <p class="card-profile__contacts-title">{{ hub.contacts_section.title }}</p>
-            {% if hub.contacts_section.subtitle %}
-            <p class="card-profile__contacts-subtitle">{{ hub.contacts_section.subtitle }}</p>
-            {% endif %}
-          </div>
-        </header>
         <div class="contact-ribbon" role="list">
           {% for contact in hub.contacts %}
           {% assign contact_url = contact.url | default: '#' %}
@@ -74,9 +63,6 @@ permalink: /
             </span>
             <span class="contact-chip__body">
               <span class="contact-chip__label">{{ contact.label }}</span>
-              {% if contact.value and contact.value != contact.label %}
-              <span class="contact-chip__value">{{ contact.value }}</span>
-              {% endif %}
             </span>
             <span class="contact-chip__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>

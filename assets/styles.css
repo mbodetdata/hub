@@ -213,27 +213,6 @@ button:focus-visible {
   margin-top: 1.5rem;
 }
 
-.card-profile__contacts-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.card-profile__contacts-title {
-  margin: 0;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.card-profile__contacts-subtitle {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .contact-ribbon {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -279,12 +258,6 @@ button:focus-visible {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.contact-chip__value {
-  color: var(--muted);
-  font-size: 0.9rem;
-  white-space: nowrap;
 }
 
 .contact-chip__arrow svg {
@@ -499,11 +472,6 @@ button:focus-visible {
 
   .card-profile__actions {
     justify-content: center;
-  }
-
-  .card-profile__contacts-head {
-    justify-content: center;
-    text-align: center;
   }
 }
 
