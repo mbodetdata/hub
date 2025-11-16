@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Redirection automatique vers le hub BMdata.">
   <meta name="robots" content="noindex,follow">
-  <meta http-equiv="refresh" content="0; url={{ redirect_target }}">
+  <meta http-equiv="refresh" content="0; url=">
   <link rel="preload" href="assets/styles.css" as="style">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
@@ -105,47 +105,5 @@
     JavaScript est nécessaire pour la redirection automatique. Vous pouvez <a href="{{ redirect_target }}">accéder directement au hub</a>.
   </noscript>
   <script defer src="assets/script.js"></script>
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var fallbackTarget = 'https://bmdata.fr/hub/';
-      var configuredTarget = (root.getAttribute('data-target-url') || '').trim() || fallbackTarget;
-      var metaRefresh = document.querySelector('meta[http-equiv="refresh"]');
-      var status = document.getElementById('redirect-status');
-      var link = document.getElementById('redirect-link');
-      var title = document.querySelector('title');
-      var activated = false;
-
-      function updateStatus(message) {
-        if (status) status.textContent = message;
-      }
-
-      function sanitize(url) {
-        if (!url) return fallbackTarget;
-        try {
-          var absolute = new URL(url, window.location.origin);
-          return absolute.href;
-        } catch (err) {
-          return fallbackTarget;
-        }
-      }
-
-      function applyTarget(url) {
-        if (activated) return;
-        activated = true;
-        var finalUrl = sanitize(url);
-        updateStatus('Vous allez être redirigé vers ' + finalUrl + '.');
-        if (link) link.href = finalUrl;
-        if (metaRefresh) metaRefresh.setAttribute('content', '0; url=' + finalUrl);
-        if (title) title.textContent = 'BMdata · Redirection vers ' + finalUrl;
-        setTimeout(function () {
-          window.location.replace(finalUrl);
-        }, 80);
-      }
-
-      updateStatus('Initialisation de la redirection...');
-      applyTarget(configuredTarget);
-    })();
-  </script>
 </body>
 </html>
