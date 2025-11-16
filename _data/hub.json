@@ -2,27 +2,33 @@
   "profile": {
     "title": "Martial Bodet",
     "role": "Au service de votre entreprise",
-    "intro": "Je transforme vos données en un outil simple qui vous fait gagner du temps et vous aide à décider plus vite.",
+    "intro": "Je transforme vos donn\u00e9es en un outil simple qui vous fait gagner du temps et vous aide \u00e0 d\u00e9cider plus vite.",
     "photo": "/assets/img/Photo_profil.webp",
     "about_url": "https://bmdata.fr/about-me/",
     "about_label": "Qui je suis ?",
+    "eyebrow": "Carte de visite num\u00e9rique",
     "badges": [
-      "Précision absolue",
-      "Clarté instantanée",
-      "Temps libéré"
+      "Pr\u00e9cision absolue",
+      "Clart\u00e9 instantan\u00e9e",
+      "Temps lib\u00e9r\u00e9"
+    ],
+    "stats": [
+      { "value": "+60", "label": "projets data livr\u00e9s" },
+      { "value": "< 24h", "label": "temps de r\u00e9ponse" },
+      { "value": "FR / EN", "label": "collaboration bilingue" }
     ]
   },
   "links_section": {
-    "eyebrow": "Accès direct",
+    "eyebrow": "Acc\u00e8s direct",
     "title": "Contactez-moi en un clic",
-    "subtitle": "LinkedIn, rendez-vous, références ou site : choisissez le canal le plus utile pour avancer."
+    "subtitle": "LinkedIn, rendez-vous, r\u00e9f\u00e9rences ou site : choisissez le canal le plus utile pour avancer."
   },
   "links": [
     {
       "label": "BMData",
       "url": "https://bmdata.fr",
       "icon": "bmdata",
-      "group":"site",
+      "group": "site",
       "order": 1
     },
     {
@@ -43,14 +49,14 @@
       "label": "Profil Malt",
       "url": "https://www.malt.fr/profile/martialbodet1",
       "icon": "globe",
-      "group":"site",
+      "group": "site",
       "order": 4
     }
   ],
   "contacts_section": {
-    "eyebrow": "Coordonnées",
+    "eyebrow": "Coordonn\u00e9es",
     "title": "Toujours joignable",
-    "subtitle": "Une réponse sous 24h ouvrées, et la possibilité de réserver un créneau directement."
+    "subtitle": "Une r\u00e9ponse sous 24h ouvr\u00e9es, et la possibilit\u00e9 de r\u00e9server un cr\u00e9neau directement."
   },
   "contacts": [
     {
@@ -73,26 +79,26 @@
     }
   ],
   "highlights_section": {
-    "eyebrow": "À la une",
+    "eyebrow": "\u00c0 la une",
     "title": "Agenda & publications",
-    "subtitle": "Webinaires, conférences ou articles fraîchement publiés : voici les temps forts à venir."
+    "subtitle": "Webinaires, conf\u00e9rences ou articles fra\u00eechement publi\u00e9s : voici les temps forts \u00e0 venir."
   },
   "highlights": [
     {
       "active": false,
       "tag": "Webinaire",
       "title": "Optimiser vos pipelines Talend en 2025",
-      "summary": "45 minutes de retours d'expérience sur les architectures hybrides et les bonnes pratiques de monitoring.",
-      "meta": "Jeudi 12 déc. · 11h00",
-      "cta_label": "Réserver sa place",
+      "summary": "45 minutes de retours d'exp\u00e9rience sur les architectures hybrides et les bonnes pratiques de monitoring.",
+      "meta": "Jeudi 12 d\u00e9c. \u00e0 11h00",
+      "cta_label": "R\u00e9server sa place",
       "cta_url": "https://example.com/talend-webinar"
     },
     {
       "active": false,
-      "tag": "Conférence",
-      "title": "Modern BI Tour — Bordeaux",
-      "summary": "Une session live pour découvrir comment mêler Power BI et automation pour accélérer vos décisions.",
-      "meta": "17 janvier · 18h30",
+      "tag": "Conf\u00e9rence",
+      "title": "Modern BI Tour \u2013 Bordeaux",
+      "summary": "Une session live pour d\u00e9couvrir comment m\u00ealer Power BI et automation pour acc\u00e9l\u00e9rer vos d\u00e9cisions.",
+      "meta": "17 janvier \u00e0 18h30",
       "cta_label": "Demander une invitation",
       "cta_url": "https://example.com/modern-bi-tour"
     }

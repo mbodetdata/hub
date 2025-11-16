@@ -1,7 +1,7 @@
 ---
 layout: hub
-title: "Hub — Martial Bodet"
-description: "Tous mes liens, coordonnées et rendez-vous centralisés sur une page."
+title: "Hub &middot; Martial Bodet"
+description: "Tous mes liens, coordonn&eacute;es et rendez-vous centralis&eacute;s sur une page."
 permalink: /
 ---
 {%- assign hub = site.data.hub -%}
@@ -14,25 +14,21 @@ permalink: /
     <figure class="hub-hero__photo">
       <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="lazy" decoding="async">
     </figure>
-    <div class="hub-hero__share">
-      <button class="hub-btn hub-btn--ghost hub-btn--block" type="button"
-              data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <path d="M18 8a3 3 0 1 0-2.83-4H13v4h2.17A3 3 0 0 0 18 8zm-6 8a3 3 0 0 0-2.83 2H7v4h2.17A3 3 0 1 0 12 16zm-6-4a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/>
-          <path d="M8.59 10.59l6.82 3.41M15.41 9.59L8.59 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        Copier / partager
-      </button>
-      <span class="hub-share__feedback" aria-live="polite"></span>
+    <div class="hub-hero__signature">
+      <span class="hub-hero__signature-label">BMdata &middot; Hub personnel</span>
+      <span class="hub-hero__signature-value">Toujours &agrave; jour</span>
     </div>
   </div>
   <div class="hub-hero__body">
     <div class="hub-hero__header">
-      <div class="hub-hero__heading">
-        <h1 class="hub-hero__title" itemprop="name">{{ hub.profile.title }}</h1>
-        {% if hub.profile.role %}
-        <p class="hub-hero__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
-        {% endif %}
+      <div>
+        <p class="hub-hero__eyebrow">{{ hub.profile.eyebrow | default: 'Carte de visite num&eacute;rique' }}</p>
+        <div class="hub-hero__heading">
+          <h1 class="hub-hero__title" itemprop="name">{{ hub.profile.title }}</h1>
+          {% if hub.profile.role %}
+          <p class="hub-hero__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
+          {% endif %}
+        </div>
       </div>
       {% if hub.profile.about_url %}
       <a class="hub-btn hub-btn--ghost hub-btn--about" href="{{ hub.profile.about_url }}" target="_blank" rel="noopener">
@@ -54,7 +50,37 @@ permalink: /
       {% endfor %}
     </ul>
     {% endif %}
-    <dl class="hub-meta-list">
+    <div class="hub-hero__cta">
+      <div class="hub-hero__cta-group">
+        {% if calendar_contact %}
+        <a class="hub-btn hub-btn--primary hub-btn--shine" href="{{ calendar_contact.url }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3" ry="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="15" r="2" fill="currentColor"/></svg>
+          Planifier un &eacute;change
+        </a>
+        {% endif %}
+        <button class="hub-btn hub-btn--ghost hub-btn--share" type="button"
+                data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M18 8a3 3 0 1 0-2.83-4H13v4h2.17A3 3 0 0 0 18 8zm-6 8a3 3 0 0 0-2.83 2H7v4h2.17A3 3 0 1 0 12 16zm-6-4a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/>
+            <path d="M8.59 10.59l6.82 3.41M15.41 9.59L8.59 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Copier / partager
+        </button>
+      </div>
+      <span class="hub-share__feedback" aria-live="polite"></span>
+    </div>
+    {% assign hero_stats = hub.profile.stats %}
+    {% if hero_stats and hero_stats.size > 0 %}
+    <div class="hub-hero__stats">
+      {% for stat in hero_stats %}
+      <article class="hub-stat-card">
+        <p class="hub-stat-card__value">{{ stat.value }}</p>
+        <p class="hub-stat-card__label">{{ stat.label }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <dl class="hub-meta-list hub-meta-list--cards">
       {% if calendar_contact %}
       <div class="hub-meta-list__item hub-meta-list__item--cta">
         <dt>Rendez-vous</dt>
@@ -186,3 +212,6 @@ permalink: /
   </div>
 </section>
 {% endif %}
+
+
+
