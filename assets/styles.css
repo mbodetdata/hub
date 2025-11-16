@@ -326,6 +326,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   z-index: 1;
 }
 
+.hub-cta__body--value {
+  justify-content: center;
+}
+
+.hub-cta__body--sr {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  padding: 0;
+}
+
 .hub-cta__label {
   font-weight: 600;
   font-size: 1rem;
@@ -341,6 +352,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
   text-transform: none;
   line-height: 1.3;
   white-space: normal;
+}
+
+.hub-cta__body--value .hub-cta__value {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
 }
 
 .hub-cta__support {
@@ -564,6 +580,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 
 @media (max-width: 640px) {
   .hub-main { padding: 1.5rem 1rem 3rem; }
+  .hub-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hub-hero__body { order: 1; width: 100%; }
+  .hub-hero__media { order: 2; width: 100%; }
   .hub-hero__cta-group { flex-direction: column; align-items: stretch; }
   .hub-btn--about { width: 100%; }
   .hub-link-card, .hub-contact-card { grid-template-columns: 1fr; }
