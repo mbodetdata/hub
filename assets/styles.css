@@ -163,13 +163,13 @@ button:focus-visible {
   flex-wrap: nowrap;
   gap: 0.9rem;
   justify-content: center;
-  width: 100%;
-  max-width: 360px;
+  width: min(360px, 100%);
 }
 
 .card-profile__actions .vc-btn {
   flex: 1 1 0;
   justify-content: center;
+  min-width: 0;
 }
 
 .vc-btn {
@@ -185,6 +185,9 @@ button:focus-visible {
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, color 150ms ease, background 150ms ease;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .vc-btn__icon svg {
@@ -254,6 +257,7 @@ button:focus-visible {
 }
 
 .contact-chip__label {
+  display: block;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -472,6 +476,26 @@ button:focus-visible {
 
   .card-profile__actions {
     justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-profile__photo {
+    width: min(70vw, 260px);
+  }
+
+  .card-profile__actions {
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .card-profile__actions .vc-btn {
+    flex: 1 1 45%;
+    font-size: 0.82rem;
+  }
+
+  .contact-chip {
+    padding: 0.9rem 1rem;
   }
 }
 
