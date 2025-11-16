@@ -101,5 +101,32 @@
       "cta_label": "Être averti",
       "cta_url": "https://example.com/tech4business"
     }
+  ],
+  "highlights_section": {
+    "eyebrow": "À la une",
+    "title": "Agenda & publications",
+    "subtitle": "Webinaires, conférences ou articles fraîchement publiés : voici les temps forts à venir."
+  },
+  "highlights": [
+    {
+      "active": false,
+      "tag": "Webinaire",
+      "title": "Optimiser vos pipelines Talend en 2025",
+      "summary": "45 minutes de retours d'expérience sur les architectures hybrides et les bonnes pratiques de monitoring.",
+      "meta": "Jeudi 12 déc. à 11h00",
+      "date_sort": "2025-12-12T11:00:00+01:00",
+      "cta_label": "Réserver sa place",
+      "cta_url": "https://example.com/talend-webinar"
+    },
+    {
+      "active": false,
+      "tag": "Conférence",
+      "title": "Modern BI Tour – Bordeaux",
+      "summary": "Une session live pour découvrir comment mêler Power BI et automation pour accélérer vos décisions.",
+      "meta": "17 janvier à 18h30",
+      "date_sort": "2026-01-17T18:30:00+01:00",
+      "cta_label": "Demander une invitation",
+      "cta_url": "https://example.com/modern-bi-tour"
+    }
   ]
 }
