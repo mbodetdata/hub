@@ -183,15 +183,16 @@ button:focus-visible {
 .vc-btn {
   border: none;
   border-radius: 999px;
-  padding: 0.85rem 1.3rem;
-  font-size: 0.98rem;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, color 150ms ease, background 150ms ease;
+  white-space: nowrap;
 }
 
 .vc-btn__icon svg {
