@@ -68,17 +68,18 @@
     "cta_url": "https://bmdata.fr/agenda"
   },
   "featured": [
-    {
-      "active": false,
-      "category": "Webinaire",
-      "title": "Data Pulse : déployer un cockpit financier fiable",
-      "summary": "Présentation en direct des méthodes que j'utilise pour stabiliser vos KPI finance sous Power BI.",
-      "date": "Mardi 26 nov. · 12h30",
-      "location": "Live Teams",
-      "date_sort": "2025-11-26T12:30:00+01:00",
-      "cta_label": "S'inscrire gratuitement",
-      "cta_url": "https://example.com/data-pulse"
-    },
+{
+  "active": true,
+  "category": "Article",
+  "title": "Migration Talend vers Talaxie : le guide complet",
+  "summary": "Pourquoi Talaxie est devenu l'alternative incontournable à Talend Open Studio et comment migrer vos projets en 8 étapes simples.",
+  "date": "07 oct. 2025",
+  "location": "bmdata.fr",
+  "date_sort": "2025-10-07T08:00:00+01:00",
+  "cta_label": "Lire l’article",
+  "cta_url": "https://bmdata.fr/blog/migration-talend-vers-talaxie/"
+}
+,
     {
       "active": false,
       "category": "Atelier clients",
