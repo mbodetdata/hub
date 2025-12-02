@@ -101,7 +101,11 @@ permalink: /
   {% endif %}
 </section>
 
-{% if hub.links and hub.links.size > 0 %}
+{% assign links_list = hub.links | default: empty_array %}
+{% assign active_links = links_list | where_exp: 'link', 'link.active != false' | default: empty_array %}
+{% assign ordered_links = active_links | sort: 'order' | default: empty_array %}
+{% assign ordered_links_size = ordered_links | size %}
+{% if ordered_links_size > 0 %}
 <section class="hub-section hub-card hub-links-panel" aria-labelledby="hub-links-title">
   <header class="hub-section__head">
     {% if hub.links_section.eyebrow %}
@@ -109,7 +113,6 @@ permalink: /
     {% endif %}
   </header>
   <div class="hub-links-grid">
-    {% assign ordered_links = hub.links | sort: 'order' %}
     {% for link in ordered_links %}
       {% include hub-link-card.html link=link %}
     {% endfor %}
