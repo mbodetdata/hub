@@ -18,7 +18,7 @@ permalink: /
   <div class="card-profile__grid">
     <div class="card-profile__portrait">
       <figure class="card-profile__photo">
-        <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="lazy" decoding="async">
+        <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="eager" fetchpriority="high" decoding="async">
       </figure>
       <div class="card-profile__actions">
         <button class="vc-btn vc-btn--primary" type="button"
