@@ -21,14 +21,7 @@ permalink: /
         <img src="{{ hub.profile.photo | relative_url }}" alt="Portrait de {{ hub.profile.title }}" loading="eager" fetchpriority="high" decoding="async">
       </figure>
       <div class="card-profile__actions">
-        <button class="vc-btn vc-btn--primary" type="button"
-                data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
-          <span class="vc-btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-2.83-4H13v4h2.17A3 3 0 0 0 18 8zm-6 8a3 3 0 0 0-2.83 2H7v4h2.17A3 3 0 1 0 12 16zm-6-4a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/><path d="M8.59 10.59l6.82 3.41M15.41 9.59L8.59 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-          <span>Partager ma carte</span>
-        </button>
-        <a class="vc-btn vc-btn--ghost"
+        <a class="vc-btn vc-btn--primary vc-btn--contact-cta"
            href="{{ '/assets/contact.vcf' | relative_url }}"
            download="Martial-Bodet.vcf"
            type="text/vcard">
@@ -39,8 +32,15 @@ permalink: /
               <path d="M18 8v6M15 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </span>
-          <span>Ajouter mon contact</span>
+          <span>Ajouter mon contact en 1 clic</span>
         </a>
+        <button class="vc-btn vc-btn--ghost" type="button"
+                data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
+          <span class="vc-btn__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-2.83-4H13v4h2.17A3 3 0 0 0 18 8zm-6 8a3 3 0 0 0-2.83 2H7v4h2.17A3 3 0 1 0 12 16zm-6-4a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor"/><path d="M8.59 10.59l6.82 3.41M15.41 9.59L8.59 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span>Partager ma carte</span>
+        </button>
         {% if hub.profile.about_url %}
         <a class="vc-btn vc-btn--ghost" href="{{ hub.profile.about_url }}" target="_blank" rel="noopener">
           <span class="vc-btn__icon" aria-hidden="true">

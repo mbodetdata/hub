@@ -274,6 +274,15 @@ button:focus-visible {
   box-shadow: 0 15px 35px rgba(124, 93, 255, 0.35);
 }
 
+.card-profile__actions .vc-btn--contact-cta {
+  flex: 1 1 100%;
+  order: -1;
+  padding: 0.9rem 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 20px 44px rgba(124, 93, 255, 0.38), 0 12px 30px rgba(36, 216, 184, 0.32);
+}
+
 .vc-btn--ghost {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -282,6 +291,10 @@ button:focus-visible {
 
 .vc-btn:hover { transform: translateY(-2px); }
 .vc-btn--ghost:hover { border-color: rgba(255, 255, 255, 0.5); }
+.card-profile__actions .vc-btn--contact-cta:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 24px 48px rgba(124, 93, 255, 0.45), 0 16px 32px rgba(36, 216, 184, 0.38);
+}
 
 .card-profile__contacts {
   display: grid;
@@ -729,6 +742,11 @@ button:focus-visible {
   .card-profile__actions .vc-btn {
     flex: 1 1 calc(50% - 0.4rem);
     font-size: 0.82rem;
+  }
+
+  .card-profile__actions .vc-btn--contact-cta {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
   }
 
   .card-profile__header {
