@@ -6,6 +6,8 @@ ORG:BMData
 TITLE:Consultant Data
 EMAIL;TYPE=INTERNET;TYPE=WORK:contact@bmdata.fr
 TEL;TYPE=WORK;TYPE=CELL;TYPE=VOICE:+33670210928
+CATEGORIES:Data,BI,Automation,Consulting
+ROLE:Consultant Data
 URL;TYPE=WORK:https://bmdata.fr
 URL;TYPE=WORK:https://www.linkedin.com/in/martial-bodet/
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/martial-bodet/
