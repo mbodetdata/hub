@@ -5,9 +5,13 @@ N:BODET;Martial;;;
 ORG:BMData
 TITLE:Consultant Data
 EMAIL;TYPE=INTERNET;TYPE=WORK:contact@bmdata.fr
-TEL;TYPE=CELL;TYPE=VOICE:+33670210928
-URL:https://bmdata.fr
+TEL;TYPE=WORK;TYPE=CELL;TYPE=VOICE:+33670210928
+URL;TYPE=WORK:https://bmdata.fr
+URL;TYPE=WORK:https://www.linkedin.com/in/martial-bodet/
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/martial-bodet/
+NOTE:Facilitateur de vie côté data : j’automatise et je mets en place des reportings clairs pour vous faire gagner du temps.
+UID:bmdata-martial-bodet
+BDAY;VALUE=DATE:19951210
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAoHBwgHBgoICAg
  LCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv
  /2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs
@@ -198,6 +202,4 @@ PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAoHBwgHBgoICAg
  EyBqsEUOHEFasvBBal8wd3DYrlo8KckNBGyMMx8DEq98TBOxLcRNMC9RJm3Di8QNRapxMF8
  SgJgXDt9iFgi2RuCwlFCJAJU2ZNi8wZvkjrTA7VvMaFsbXkJmZzMK5LghwejIeY2sH8s028
  O6XhYCCpdz/9k=
-NOTE:Facilitateur de vie côté data : j’automatise et je mets en place des reportings clairs pour vous faire gagner du temps.
-UID:bmdata-martial-bodet
 END:VCARD
