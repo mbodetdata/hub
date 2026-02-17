@@ -232,15 +232,16 @@ button:focus-visible {
 
 .card-profile__actions {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.9rem;
   justify-content: center;
   width: 100%;
-  max-width: 360px;
+  max-width: 560px;
 }
 
 .card-profile__actions .vc-btn {
-  flex: 1 1 0;
+  flex: 1 1 160px;
+  min-width: 0;
   justify-content: center;
 }
 
@@ -726,7 +727,7 @@ button:focus-visible {
   }
 
   .card-profile__actions .vc-btn {
-    flex: 1 1 45%;
+    flex: 1 1 calc(50% - 0.4rem);
     font-size: 0.82rem;
   }
 

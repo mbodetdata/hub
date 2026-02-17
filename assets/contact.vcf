@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Martial Bodet
+N:Bodet;Martial;;;
+ORG:BMData
+TITLE:Consultant Data
+EMAIL;TYPE=INTERNET;TYPE=WORK:contact@bmdata.fr
+TEL;TYPE=CELL;TYPE=VOICE:+33670210928
+URL:https://bmdata.fr
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/martial-bodet/
+PHOTO;VALUE=URI:https://hub.bmdata.fr/assets/img/Photo_profil_min_comp.jpg
+NOTE:Consultant Talend & Power BI (ETL, DataViz, Modélisation, Gouvernance). Disponible pour missions freelance.
+UID:bmdata-martial-bodet
+END:VCARD

@@ -28,6 +28,19 @@ permalink: /
           </span>
           <span>Partager ma carte</span>
         </button>
+        <a class="vc-btn vc-btn--ghost"
+           href="{{ '/assets/contact.vcf' | relative_url }}"
+           download="Martial-Bodet.vcf"
+           type="text/vcard">
+          <span class="vc-btn__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <path d="M4 18c0-2.485 2.239-4.5 5-4.5h0.5c2.761 0 5 2.015 5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M18 8v6M15 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>Ajouter mon contact</span>
+        </a>
         {% if hub.profile.about_url %}
         <a class="vc-btn vc-btn--ghost" href="{{ hub.profile.about_url }}" target="_blank" rel="noopener">
           <span class="vc-btn__icon" aria-hidden="true">
