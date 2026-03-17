@@ -5,9 +5,6 @@ description: "Tous mes liens, coordonnées et rendez-vous centralisés sur une p
 permalink: /
 ---
 {%- assign hub = site.data.hub -%}
-{%- assign calendar_contact = hub.contacts | where: 'icon', 'calendar' | first -%}
-{%- assign email_contact = hub.contacts | where: 'icon', 'mail' | first -%}
-{%- assign phone_contact = hub.contacts | where: 'icon', 'phone' | first -%}
 {%- assign empty_array = '' | split: '' -%}
 {%- assign featured_list = hub.featured | default: empty_array -%}
 {%- assign active_featured = featured_list | where_exp: 'item', 'item.active == true' | default: empty_array -%}
@@ -15,21 +12,17 @@ permalink: /
 {%- assign sorted_featured_size = sorted_featured | size -%}
 
 <section class="card-profile hub-card" itemscope itemtype="https://schema.org/Person">
-  <div class="card-profile__grid">
 
-    <!-- Photo seule dans la colonne de gauche -->
-    <div class="card-profile__portrait">
-      <figure class="card-profile__photo">
-        <img src="{{ hub.profile.photo | relative_url }}"
-             alt="Portrait de {{ hub.profile.title }}"
-             loading="eager"
-             fetchpriority="high"
-             decoding="async">
-      </figure>
-    </div>
-
-    <!-- Identité + intro + actions dans la colonne de droite -->
-    <div class="card-profile__content">
+  <!-- Rangée compacte : photo + identité côte à côte -->
+  <div class="card-profile__top">
+    <figure class="card-profile__photo">
+      <img src="{{ hub.profile.photo | relative_url }}"
+           alt="Portrait de {{ hub.profile.title }}"
+           loading="eager"
+           fetchpriority="high"
+           decoding="async">
+    </figure>
+    <div class="card-profile__identity">
       <div class="card-profile__header">
         <h1 class="card-profile__title" itemprop="name">{{ hub.profile.title }}</h1>
         {% if sorted_featured_size > 0 %}
@@ -39,60 +32,59 @@ permalink: /
         </a>
         {% endif %}
       </div>
-
       {% if hub.profile.role %}
       <p class="card-profile__role" itemprop="jobTitle">{{ hub.profile.role }}</p>
       {% endif %}
-
-      {% if hub.profile.intro %}
-      {% assign story_blocks = hub.profile.intro | split: '||' %}
-      <div class="card-profile__intro" itemprop="description">
-        {% for block in story_blocks %}
-        {% assign parts = block | split: '::' %}
-        <p>
-          {% if parts.size > 1 %}
-          <strong>{{ parts[0] | strip }}</strong>{{ parts[1] | strip }}
-          {% else %}
-          {{ block | strip }}
-          {% endif %}
-        </p>
-        {% endfor %}
-      </div>
-      {% endif %}
-
-      <!-- CTAs sous l'intro -->
-      <div class="card-profile__actions">
-        <a class="vc-btn vc-btn--primary vc-btn--contact-cta"
-           href="{{ '/assets/contact.vcf' | relative_url }}"
-           download="Martial-Bodet.vcf"
-           type="text/vcard">
-          <span class="vc-btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M4 18c0-2.485 2.239-4.5 5-4.5h0.5c2.761 0 5 2.015 5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M18 8v6M15 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </span>
-          <span>Ajouter mon contact en 1&nbsp;clic</span>
-        </a>
-        <button class="vc-btn vc-btn--ghost" type="button"
-                data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
-          <span class="vc-btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </span>
-          <span>Partager</span>
-        </button>
-        {% if hub.profile.about_url %}
-        <a class="vc-btn vc-btn--ghost" href="{{ hub.profile.about_url }}" target="_blank" rel="noopener">
-          <span class="vc-btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M6 19c0-3.314 2.239-6 5-6h2c2.761 0 5 2.686 5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
-          </span>
-          <span>{{ hub.profile.about_label | default: 'Qui je suis ?' }}</span>
-        </a>
-        {% endif %}
-      </div>
-
-      <small class="hub-share__feedback" aria-live="polite"></small>
     </div>
-
   </div>
 
+  <!-- Intro pleine largeur -->
+  {% if hub.profile.intro %}
+  {% assign story_blocks = hub.profile.intro | split: '||' %}
+  <div class="card-profile__intro" itemprop="description">
+    {% for block in story_blocks %}
+    {% assign parts = block | split: '::' %}
+    <p>
+      {% if parts.size > 1 %}
+      <strong>{{ parts[0] | strip }}</strong>{{ parts[1] | strip }}
+      {% else %}
+      {{ block | strip }}
+      {% endif %}
+    </p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- CTAs pleine largeur -->
+  <div class="card-profile__actions">
+    <a class="vc-btn vc-btn--primary vc-btn--contact-cta"
+       href="{{ '/assets/contact.vcf' | relative_url }}"
+       download="Martial-Bodet.vcf"
+       type="text/vcard">
+      <span class="vc-btn__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M4 18c0-2.485 2.239-4.5 5-4.5h0.5c2.761 0 5 2.015 5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M18 8v6M15 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <span>Ajouter mon contact en 1&nbsp;clic</span>
+    </a>
+    <button class="vc-btn vc-btn--ghost" type="button"
+            data-share-hub="{{ page.url | replace:'index.html','' | absolute_url }}">
+      <span class="vc-btn__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <span>Partager</span>
+    </button>
+    {% if hub.profile.about_url %}
+    <a class="vc-btn vc-btn--ghost" href="{{ hub.profile.about_url }}" target="_blank" rel="noopener">
+      <span class="vc-btn__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M6 19c0-3.314 2.239-6 5-6h2c2.761 0 5 2.686 5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      </span>
+      <span>{{ hub.profile.about_label | default: 'Qui je suis&nbsp;?' }}</span>
+    </a>
+    {% endif %}
+  </div>
+  <small class="hub-share__feedback" aria-live="polite"></small>
+
+  <!-- Contacts pleine largeur -->
   {% if hub.contacts and hub.contacts.size > 0 %}
   <div class="card-profile__contacts">
     <div class="contact-ribbon" role="list">
@@ -125,6 +117,7 @@ permalink: /
     </div>
   </div>
   {% endif %}
+
 </section>
 
 {% assign links_list = hub.links | default: empty_array %}
@@ -166,10 +159,7 @@ permalink: /
     {% if hub.featured_section.cta_url %}
     <a class="hub-featured__cta" href="{{ hub.featured_section.cta_url }}" target="_blank" rel="noopener">
       {{ hub.featured_section.cta_label | default: 'Tout voir' }}
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     {% endif %}
   </header>
@@ -179,27 +169,16 @@ permalink: /
       {% for item in sorted_featured %}
       <article class="hub-featured__item">
         <header>
-          {% if item.category %}
-          <span class="hub-featured__pill">{{ item.category }}</span>
-          {% endif %}
-          {% if item.date %}
-          <span class="hub-featured__meta">{{ item.date }}</span>
-          {% endif %}
+          {% if item.category %}<span class="hub-featured__pill">{{ item.category }}</span>{% endif %}
+          {% if item.date %}<span class="hub-featured__meta">{{ item.date }}</span>{% endif %}
         </header>
         <h3>{{ item.title }}</h3>
-        {% if item.summary %}
-        <p>{{ item.summary }}</p>
-        {% endif %}
-        {% if item.location %}
-        <p class="hub-featured__location">{{ item.location }}</p>
-        {% endif %}
+        {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+        {% if item.location %}<p class="hub-featured__location">{{ item.location }}</p>{% endif %}
         {% if item.cta_url %}
         <a class="hub-featured__link" href="{{ item.cta_url }}" target="_blank" rel="noopener">
           {{ item.cta_label | default: 'En savoir plus' }}
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 7l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         {% endif %}
       </article>
@@ -248,17 +227,11 @@ permalink: /
     {% for event in sorted_highlights %}
     <article class="hub-timeline__item">
       <header>
-        {% if event.tag %}
-        <span class="hub-timeline__tag">{{ event.tag }}</span>
-        {% endif %}
-        {% if event.meta %}
-        <span class="hub-timeline__meta">{{ event.meta }}</span>
-        {% endif %}
+        {% if event.tag %}<span class="hub-timeline__tag">{{ event.tag }}</span>{% endif %}
+        {% if event.meta %}<span class="hub-timeline__meta">{{ event.meta }}</span>{% endif %}
       </header>
       <h3>{{ event.title }}</h3>
-      {% if event.summary %}
-      <p>{{ event.summary }}</p>
-      {% endif %}
+      {% if event.summary %}<p>{{ event.summary }}</p>{% endif %}
       {% if event.cta_url %}
       <a class="hub-timeline__cta" href="{{ event.cta_url }}" target="_blank" rel="noopener">
         {{ event.cta_label | default: 'Participer' }}

@@ -176,23 +176,14 @@ a    { color: inherit; text-decoration: none; }
    ================================================================ */
 .card-profile {
   display: grid;
-  gap: clamp(1.75rem, 3.5vw, 2.5rem);
+  gap: clamp(1.25rem, 3vw, 1.6rem);
 }
 
-/* Two-column grid: photo | content */
-.card-profile__grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(1.5rem, 3vw, 2.25rem);
-  align-items: flex-start;
-}
-
-/* — Photo column — */
-.card-profile__portrait {
+/* Rangée compacte: photo + identité */
+.card-profile__top {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
+  gap: clamp(1rem, 2.5vw, 1.4rem);
 }
 
 /* Premium gradient ring */
@@ -201,9 +192,10 @@ a    { color: inherit; text-decoration: none; }
   padding: 3px;
   background: var(--grad-brand);
   border-radius: 50%;
-  width: clamp(100px, 22vw, 155px);
+  width: clamp(72px, 18vw, 108px);
   aspect-ratio: 1;
   position: relative;
+  flex-shrink: 0;
 }
 
 .card-profile__photo::before {
@@ -212,8 +204,8 @@ a    { color: inherit; text-decoration: none; }
   inset: -10px;
   border-radius: 50%;
   background: var(--grad-brand);
-  filter: blur(20px);
-  opacity: 0.28;
+  filter: blur(18px);
+  opacity: 0.3;
   z-index: -1;
   pointer-events: none;
 }
@@ -227,24 +219,25 @@ a    { color: inherit; text-decoration: none; }
   border: 3px solid var(--surface-1);
 }
 
-/* — Identity column — */
-.card-profile__content {
+/* Identité: nom + rôle + chip */
+.card-profile__identity {
+  flex: 1;
+  min-width: 0;
   display: grid;
-  gap: 0.65rem;
-  padding-top: 0.15rem;
+  gap: 0.3rem;
 }
 
 .card-profile__header {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.65rem 0.75rem;
-  align-items: flex-start;
+  gap: 0.45rem 0.6rem;
 }
 
 /* Gradient hero name */
 .card-profile__title {
   margin: 0;
-  font-size: clamp(1.85rem, 5vw, 2.75rem);
+  font-size: clamp(1.65rem, 4.5vw, 2.5rem);
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -0.035em;
@@ -258,18 +251,17 @@ a    { color: inherit; text-decoration: none; }
 .card-profile__events-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   border-radius: var(--r-full);
-  padding: 0.35rem 0.72rem 0.35rem 0.35rem;
+  padding: 0.3rem 0.65rem 0.3rem 0.3rem;
   border: 1px solid var(--border-teal);
   background: rgba(21, 175, 136, 0.07);
   color: var(--teal-bright);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.01em;
   transition: background 0.2s, border-color 0.2s;
   white-space: nowrap;
-  align-self: center;
 }
 
 .card-profile__events-chip:hover {
@@ -278,11 +270,11 @@ a    { color: inherit; text-decoration: none; }
 }
 
 .card-profile__events-count {
-  width: 22px; height: 22px;
+  width: 20px; height: 20px;
   border-radius: 50%;
   background: var(--grad-teal);
   display: inline-flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.7rem;
+  font-weight: 700; font-size: 0.68rem;
   color: #020f0c;
 }
 
@@ -290,16 +282,15 @@ a    { color: inherit; text-decoration: none; }
 .card-profile__role {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(0.72rem, 1.4vw, 0.82rem);
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-/* Intro block */
+/* Intro pleine largeur */
 .card-profile__intro {
-  margin: 0.2rem 0 0;
-  padding: 1.15rem 1.35rem;
+  padding: 1.2rem 1.4rem;
   border-radius: var(--r-lg);
   background: var(--surface-glass);
   border: 1px solid var(--border-1);
@@ -310,27 +301,23 @@ a    { color: inherit; text-decoration: none; }
 
 .card-profile__intro p {
   margin: 0;
-  font-size: clamp(0.87rem, 1.8vw, 0.96rem);
+  font-size: clamp(0.87rem, 1.8vw, 0.95rem);
   line-height: 1.7;
   color: rgba(240, 244, 255, 0.8);
 }
 
 .card-profile__intro strong {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  display: inline;
+  font-size: inherit;
   color: var(--teal-bright);
   font-weight: 700;
-  margin-bottom: 0.15rem;
 }
 
-/* Action buttons */
+/* Action buttons pleine largeur */
 .card-profile__actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
-  margin-top: 0.35rem;
 }
 
 .vc-btn {
@@ -401,8 +388,8 @@ a    { color: inherit; text-decoration: none; }
 
 .contact-ribbon {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.65rem;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
 }
 
 .contact-chip {
@@ -864,33 +851,6 @@ a    { color: inherit; text-decoration: none; }
    RESPONSIVE
    ================================================================ */
 
-/* Tablet & below: stack photo over content */
-@media (max-width: 700px) {
-  .card-profile__grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .card-profile__portrait {
-    align-items: center;
-  }
-
-  .card-profile__header {
-    justify-content: center;
-  }
-
-  .card-profile__intro {
-    border-left: none;
-    border-top: 2.5px solid var(--teal);
-    text-align: left;
-  }
-
-  .hub-share__feedback {
-    text-align: center;
-  }
-}
-
 /* Mobile */
 @media (max-width: 520px) {
   .hub-main {
@@ -903,18 +863,14 @@ a    { color: inherit; text-decoration: none; }
   }
 
   .card-profile__photo {
-    width: min(44vw, 130px);
+    width: min(20vw, 80px);
+  }
+
+  .card-profile__title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
   }
 
   .card-profile__actions {
-    grid-template-columns: 1fr;
-  }
-
-  .card-profile__actions .vc-btn--contact-cta {
-    grid-column: 1;
-  }
-
-  .contact-ribbon {
     grid-template-columns: 1fr;
   }
 
