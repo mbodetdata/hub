@@ -14,6 +14,62 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ page.title | default: site.title }}">
   <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "{{ '/' | absolute_url }}#webpage",
+        "url": "{{ '/' | absolute_url }}",
+        "name": "{{ page.title | default: site.title | escape }}",
+        "description": "{{ page.description | default: site.description | escape }}",
+        "inLanguage": "fr-FR",
+        "dateModified": "{{ site.time | date_to_xmlschema }}",
+        "mainEntity": { "@id": "{{ '/' | absolute_url }}#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ '/' | absolute_url }}#person",
+        "name": "{{ site.data.hub.profile.title | escape }}",
+        "givenName": "Martial",
+        "familyName": "Bodet",
+        "jobTitle": "Consultant Data",
+        "description": "Consultant Data indépendant, je transforme des données inexploitées en vues claires et actionnables pour les équipes décisionnelles.",
+        "url": "{{ '/' | absolute_url }}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{ site.data.hub.profile.photo | absolute_url }}"
+        },
+        "email": "contact@bmdata.fr",
+        "telephone": "+33670210928",
+        "worksFor": { "@id": "https://bmdata.fr/#organization" },
+        "knowsAbout": ["Data", "Business Intelligence", "Automatisation des processus", "Gouvernance de la donnée", "Migration ETL"],
+        "sameAs": [
+          "https://www.linkedin.com/in/martial-bodet/",
+          "https://bmdata.fr/about-me/"
+        ]
+      },
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://bmdata.fr/#organization",
+        "name": "BMData",
+        "alternateName": "BM Data",
+        "url": "https://bmdata.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ '/assets/img/logo_512.webp' | absolute_url }}"
+        },
+        "email": "contact@bmdata.fr",
+        "telephone": "+33670210928",
+        "founder": { "@id": "{{ '/' | absolute_url }}#person" },
+        "sameAs": [
+          "https://www.linkedin.com/company/bmdata/"
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="{{ site.data.hub.profile.photo | relative_url }}" as="image" fetchpriority="high">
