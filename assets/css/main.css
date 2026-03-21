@@ -4748,51 +4748,108 @@ p { line-height: 1.75; color: var(--color-gray-600); }
 }
 .booking-modal[hidden] { display: none; }
 
+/* Fond stylisé : gradient profond + grille + halo coloré */
 .booking-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6, 8, 20, 0.75);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  animation: modalFadeIn .2s ease;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(102,119,255,.18) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 75% 70%, rgba(43,212,143,.10) 0%, transparent 60%),
+    rgba(6, 8, 22, 0.88);
+  -webkit-backdrop-filter: blur(8px) saturate(1.4);
+  backdrop-filter: blur(8px) saturate(1.4);
+  animation: modalFadeIn .22s ease;
+}
+/* Grille subtile sur le fond */
+.booking-modal__backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 36px 36px;
+  pointer-events: none;
 }
 
+/* Conteneur */
 .booking-modal__container {
   position: relative;
+  z-index: 1;
   width: 100%;
-  max-width: 860px;
-  height: min(90vh, 780px);
-  background: rgba(18, 22, 45, 0.96);
-  border: 1px solid rgba(255,255,255,.1);
+  max-width: 880px;
+  height: min(90vh, 800px);
+  display: flex;
+  flex-direction: column;
+  background: rgba(12, 16, 36, 0.97);
+  border: 1px solid rgba(102,119,255,.25);
   border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,.6);
-  animation: modalSlideUp .25s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 24px 60px rgba(0,0,0,.7),
+    0 0 80px rgba(102,119,255,.08);
+  animation: modalSlideUp .28s cubic-bezier(.34,1.4,.64,1);
 }
 
+/* Poignée mobile (cachée sur desktop) */
+.booking-modal__handle {
+  display: none;
+  width: 40px;
+  height: 4px;
+  background: rgba(255,255,255,.2);
+  border-radius: 2px;
+  margin: 10px auto 0;
+  flex-shrink: 0;
+}
+
+/* Barre de titre */
+.booking-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  height: 52px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.03);
+}
+
+.booking-modal__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+/* Bouton fermer — toujours visible dans la barre */
 .booking-modal__close {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,.08);
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,.07);
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 50%;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.6);
   cursor: pointer;
-  transition: background .15s, color .15s;
+  transition: background .15s, color .15s, border-color .15s;
+  flex-shrink: 0;
 }
 .booking-modal__close:hover {
-  background: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.22);
   color: #fff;
 }
 
-.booking-modal__container iframe {
+/* Zone iframe */
+.booking-modal__iframe-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+.booking-modal__iframe-wrap iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -4804,19 +4861,33 @@ p { line-height: 1.75; color: var(--color-gray-600); }
   to   { opacity: 1; }
 }
 @keyframes modalSlideUp {
-  from { opacity: 0; transform: translateY(24px) scale(.97); }
+  from { opacity: 0; transform: translateY(28px) scale(.96); }
   to   { opacity: 1; transform: translateY(0)    scale(1);   }
 }
 
+/* ── Mobile : drawer depuis le bas ── */
 @media (max-width: 600px) {
   .booking-modal {
     padding: 0;
     align-items: flex-end;
   }
+  .booking-modal__backdrop {
+    /* zone cliquable visible au-dessus du drawer */
+    cursor: pointer;
+  }
   .booking-modal__container {
     max-width: 100%;
     width: 100%;
-    height: 92vh;
-    border-radius: var(--radius-xl, 20px) var(--radius-xl, 20px) 0 0;
+    height: 92dvh;
+    border-radius: 18px 18px 0 0;
+    animation: modalDrawerUp .3s cubic-bezier(.34,1.2,.64,1);
   }
+  .booking-modal__handle {
+    display: block;
+  }
+}
+
+@keyframes modalDrawerUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
 }
