@@ -92,8 +92,7 @@ permalink: /
       {% assign contact_url = contact.url | default: '#' %}
       {% assign contact_is_http = contact_url contains 'http' %}
       <a class="contact-chip contact-chip--{{ contact.icon }}"
-         href="{{ contact_url }}"
-         {% if contact_is_http %}target="_blank" rel="noopener"{% endif %}
+         {% if contact.icon == 'calendar' %}href="#booking-modal" data-booking-modal{% else %}href="{{ contact_url }}"{% if contact_is_http %} target="_blank" rel="noopener"{% endif %}{% endif %}
          aria-label="{{ contact.value | default: contact.label }}"
          role="listitem">
         <span class="contact-chip__icon" aria-hidden="true">
