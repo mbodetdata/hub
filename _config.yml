@@ -6,4 +6,5 @@ baseurl: ""
 permalink: pretty
 timezone: Europe/Paris
 collections: []
-plugins: []
+plugins:
+  - jekyll-sitemap
