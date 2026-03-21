@@ -89,5 +89,24 @@
     </div>
   </main>
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+
+  <!-- Modal prise de rendez-vous -->
+  <div id="booking-modal" class="booking-modal" role="dialog" aria-modal="true" aria-label="Prendre rendez-vous" hidden>
+    <div class="booking-modal__backdrop"></div>
+    <div class="booking-modal__container">
+      <button type="button" class="booking-modal__close" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <iframe
+        src="https://outlook.office.com/book/meeting@bmdata.fr/?ismsaljsauthenabled"
+        title="Prendre rendez-vous — Martial Bodet"
+        width="100%" height="100%"
+        scrolling="yes"
+        loading="lazy"
+      </iframe>
+    </div>
+  </div>
 </body>
 </html>

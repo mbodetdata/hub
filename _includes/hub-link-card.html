@@ -19,8 +19,7 @@
 {% endcapture %}
 
 <a class="hub-link-card{% if link.group %} hub-link-card--{{ link.group }}{% endif %}"
-   href="{{ link_url }}"
-   {% if is_http %}target="_blank" rel="noopener"{% endif %}
+   {% if link.icon == 'calendar' %}href="#booking-modal" data-booking-modal{% else %}href="{{ link_url }}"{% if is_http %} target="_blank" rel="noopener"{% endif %}{% endif %}
    {% if link.group %}data-link-group="{{ link.group }}"{% endif %}>
   <span class="hub-link-card__icon" aria-hidden="true">{{ link_icon | strip }}</span>
   <span class="hub-link-card__content">

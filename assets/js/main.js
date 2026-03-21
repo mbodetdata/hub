@@ -431,6 +431,38 @@
     });
   });
 
+  /* ─── Booking modal ─── */
+  const bookingModal = document.getElementById('booking-modal');
+  if (bookingModal) {
+    const closeBtn  = bookingModal.querySelector('.booking-modal__close');
+    const backdrop  = bookingModal.querySelector('.booking-modal__backdrop');
+    let openerEl    = null;
+
+    function openBookingModal(e) {
+      e.preventDefault();
+      openerEl = e.currentTarget;
+      bookingModal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeBookingModal() {
+      bookingModal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (openerEl) { openerEl.focus(); openerEl = null; }
+    }
+
+    document.querySelectorAll('[data-booking-modal]').forEach(btn => {
+      btn.addEventListener('click', openBookingModal);
+    });
+
+    closeBtn.addEventListener('click', closeBookingModal);
+    backdrop.addEventListener('click', closeBookingModal);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !bookingModal.hasAttribute('hidden')) closeBookingModal();
+    });
+  }
+
   /* ─── Hub : carousel ─── */
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
     const track = carousel.querySelector('[data-carousel-track]');
